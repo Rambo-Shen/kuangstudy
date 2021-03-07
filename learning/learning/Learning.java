@@ -3,7 +3,7 @@ package learning;
 import java.util.List;
 
 /**
- * learning
+ * learning variables
  *
  * @author Rambo,Shen
  * @version 1.0.0
