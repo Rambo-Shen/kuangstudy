@@ -56,7 +56,7 @@ public class Learning {
 
         Book book = new Book();
         System.out.println(book.name);//null
-        System.out.println(book.page);//default 0 / 0.0 / false
+        System.out.println(book.getPage());//default 0 / 0.0 / false
         System.out.println("---ending---");
 
     }

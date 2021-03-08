@@ -21,7 +21,7 @@ public class Sentences {
     private static void breakInFor() {
         System.out.println("---labels in for sentences---");
         outer:for (int i =1;i<10;i++){
-            inner:for(int j = 1;j<i;j++){
+            for(int j = 1;j<i;j++){
                 System.out.println(i*j);
                 if(j == 1){
                     continue outer;
