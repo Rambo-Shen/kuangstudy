@@ -1,7 +1,9 @@
-package learning;
+package learning.entity;
+
+import learning.basic.Learning;
 
 public class Book {
-    String name;
+    public String name;
     private int page;
     protected int price;
 
@@ -21,5 +23,11 @@ public class Book {
 
     public void read(){
         System.out.println("im reading "+name);
+    }
+    public int getPrice() {
+        return price;
+    }
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

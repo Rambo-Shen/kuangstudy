@@ -1,6 +1,7 @@
-package learning;
+package learning.basic;
 
 import java.util.Arrays;
+import learning.entity.*;
 
 /**  
  * learning function and arrays

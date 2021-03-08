@@ -1,9 +1,10 @@
-package learning;
+package learning.oop;
 /**
  * learning Class
  * @author Rambo,Shen
  * @version 1.1
  */ 
+import learning.entity.*;
 
 public class Oop {
     public static void main(String[] args) {
@@ -67,7 +68,7 @@ public class Oop {
         Book book = new Story();
         Story story = new Story();
         System.out.println(story.name);
-        System.out.println(story.price);
+        System.out.println(story.getPrice());
         System.out.println(story.getPage());
         //Override 只能用于非静态非私有方法
         /**
@@ -86,7 +87,7 @@ public class Oop {
 
         Book book = new Book();
         System.out.println(book.name);
-        System.out.println(book.price);
+        System.out.println(book.getPrice());
         System.out.println(book.getPage());
         System.out.println("---ending---");
 

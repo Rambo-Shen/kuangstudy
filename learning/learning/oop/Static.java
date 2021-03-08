@@ -1,4 +1,4 @@
-package learning;
+package learning.oop;
 
 public class Static {
     {System.out.println("代码块");}

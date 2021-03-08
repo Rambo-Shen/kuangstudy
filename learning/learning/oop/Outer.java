@@ -1,4 +1,4 @@
-package learning;
+package learning.oop;
 /**
  * 内部类可以获得外部类的private成员属性
  * 但static 内部class不行

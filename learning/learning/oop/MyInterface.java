@@ -1,4 +1,4 @@
-package learning;
+package learning.oop;
 /**
  * learning Interface
  * 所有方法没有方法体

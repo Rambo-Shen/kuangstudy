@@ -1,7 +1,7 @@
-package learning;
+package learning.basic;
 
 import java.util.List;
-
+import learning.entity.*;
 /**
  * learning variables
  *

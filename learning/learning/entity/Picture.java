@@ -1,4 +1,4 @@
-package learning;
+package learning.entity;
 
 public class Picture extends Book{
     @Override
