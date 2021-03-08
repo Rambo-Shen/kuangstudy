@@ -18,4 +18,8 @@ public class Book {
     public void setPage(int page) {
         this.page = page;
     }
+
+    public void read(){
+        System.out.println("im reading "+name);
+    }
 }

@@ -21,4 +21,12 @@ public class Story extends Book{
         System.out.println("-----ending-----");
 
     }
+    @Override
+    public int getPage() {
+        return this.page;
+    }
+    @Override
+    public void read() {
+        System.out.println("im reading Story "+name);
+    }
 }

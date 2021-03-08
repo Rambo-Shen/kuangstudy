@@ -44,6 +44,7 @@ public class Learning {
         System.out.println("---compute signal---");
         //short + byte = int
 
+        //同一个继承树分支上才能比较
         Book book = new Book();
         System.out.println(book instanceof Book);
         System.out.println(book instanceof List);
