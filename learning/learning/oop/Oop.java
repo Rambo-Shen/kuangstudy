@@ -1,8 +1,9 @@
 package learning.oop;
 /**
  * learning Class
+ * lambda代替只有一个方法体的接口
  * @author Rambo,Shen
- * @version 1.1
+ * @version 1.2
  */ 
 import learning.entity.*;
 
@@ -24,6 +25,21 @@ public class Oop {
 
         //内部类
         inner();
+
+        //lambda
+        lambda();
+    }
+
+    private static void lambda() {
+        System.out.println("---Lambda---");
+        /**
+         * 参数类型声明可以简化,顺序不可改变
+         * 参数只有一个可以省略小括号
+         * 方法体只有一行代码可以省略中括号
+         */
+        MyInterface2 myInterface2 = (a,b) -> System.out.println("I like to "+a+"!");
+        myInterface2.doSomething("",1);
+        System.out.println("---ending---");
     }
 
     private static void inner() {
@@ -32,6 +48,32 @@ public class Oop {
         Outer outer = new Outer();
         Outer.Inner inner = outer.new Inner();
         inner.in();
+
+        new Outer.StaticInner().doSomething();
+        new InnerOuter().doSomething();
+
+        class PartiInner implements MyInterface{
+
+            @Override
+            public void doSomething() {
+                System.out.println("这是一个局部内部类");
+            }
+            
+        }
+
+        new PartiInner().doSomething();
+
+        new MyInterface(){
+            @Override
+            public void doSomething() {
+                System.out.println("这是一个匿名内部类");
+            }
+        }.doSomething();
+
+
+        MyInterface myInterface = ()-> System.out.println("lambda");
+        myInterface.doSomething();
+
         System.out.println("---ending---");
 
     }

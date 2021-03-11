@@ -1,6 +1,8 @@
 package learning.thread;
 /**
  * buy tickets
+ * sleep
+ * @author Rambo,Shen
  */
 public class MyThread4 implements Runnable{
     private int ticketsNum = 10;

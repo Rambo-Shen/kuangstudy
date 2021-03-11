@@ -6,7 +6,7 @@ package learning.oop;
  * @author Rambo,Shen
  * @version 1.0
  */
-public interface MyInterface {
+public interface MyInterface1 {
     public void name();
 
 }
