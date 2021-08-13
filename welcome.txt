@@ -9,3 +9,78 @@ git rm
 git status
 git branch (-d) //add/delete a branch 
 git checkout [branch] //switch branch
+
+Mysql // [..]database name [...] table name [....]attr name [.....]value
+create database (if not exists) [..]
+show databases;
+use [..]
+drop (if exists) database
+  
+show tables;
+describe [...];
+
+create table [...](
+id int(10) not null auto_increment comment 'index',
+name varchar(99) not null default '' comment '',
+price1 int not null comment'',
+price2 int(2) not null comment'',
+create_time datetime not null comment '', 
+primary key (id)
+)engine = innodb default charset = utf8 
+
+id version乐观锁 is_delete 逻辑删除标志 gmt_create gmt_update 创建/修改时间
+
+alter table [...] rename  as [...]
+alter table [...] add age int(11)
+alter table [...] modify age varchar(11)
+alter table [...] change age age1 int(3)
+alter table [...] drop age1 a 
+drop table [...]
+
+//物理外键，不需要
+alter table [...] add constraint [name of fk] foreign key([....]) references [...]([....]);
+
+insert into [...] ([....]) values ([.....]),(),();
+
+update [...] set [....]=[.....],, where (cond); 
+
+delete from [...] where (cond);
+truncate table [...];//自增量初始化
+
+SELECT
+    [ALL | DISTINCT | DISTINCTROW ]  //DISTINCT 去重
+        [HIGH_PRIORITY]
+        [STRAIGHT_JOIN]
+        [SQL_SMALL_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT)
+        [SQL_CACHE | SQL_NO_CACHE] [SQL_CALC_FOUND_ROWS]
+    select_expr [, select_expr ...]  //列名 as 别名, 列名+1, ...
+    [FROM table_references
+        [PARTITION partition_list]
+    [WHERE where_condition]
+    [GROUP BY {col_name | expr | position}
+        [ASC | DESC], ...[WITH ROLLUP]]
+    [HAVING where_condition]
+    [ORDER BY {col_name | expr | position}
+        [Asc | DESC],...]
+    [LIMIT {[offset,] row_count | row_count OFFSET offset}] 
+    [PROCEDURE procedure_name(argument_list)]
+    [INTO OUTFILE ‘file_name’
+        [CHARACTER SET charset_name]
+        export_options
+        | INTO DUMPFILE ‘file_name’
+        | INTO var_name [, var_name]]
+    [For UPDATE | LOCK IN SHARE MODE]]
+
+select * from [...] [inner join | left join | right join] [...](another) on [...].[....]  = [...].[....] 
+
+//transaction (lock)
+set autocommit = 0;
+start transaction;
+...(code)
+commit;
+rollback; // 回滚
+set autocommit = 1;
+
+// 在terminal中 <导入, >导出
+mysqldump -h localhost -u root -p[psw] starbacks < ｜ > ~/desktop/develop/starbucks.sql
+source xxx.sql //也可以导入
