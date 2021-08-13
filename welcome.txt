@@ -1,1 +1,11 @@
 hello macbookpro!
+
+push my code to github 
+git add .
+git commit -m "..."
+git push
+
+git rm
+git status
+git branch (-d) //add/delete a branch 
+git checkout [branch] //switch branch
