@@ -11,14 +11,17 @@ import java.sql.Statement;
 
 
 
+
 public class MysqlJDBC {
     public static void main(String[] args) {
 
         //customer pay order(id);
-        jdbcTransaction(1);
+        //jdbcTransaction(1);
+
          
     }
 
+    
     public static void jdbcTransaction(int id) {
         String url = "jdbc:mysql://localhost:3306/starbacks?useUnicode=true&characterEncodeing&useSSL=true";
         String username  = "root";
@@ -113,7 +116,7 @@ public class MysqlJDBC {
             e.printStackTrace();
         }
     }
-    public void jdbcConnect() {
+    public static void jdbcConnect() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e1) {
@@ -133,14 +136,15 @@ public class MysqlJDBC {
             ResultSet resultset = statement.executeQuery(sql);
             
             while(resultset.next()){
-                System.out.println(String.format("id = %s, customer = %s, coffee = %s, number = %s, state = %s, station = %s,create time = %s, update time = %s", resultset.getObject("id"),resultset.getObject("customer"),resultset.getObject("coffee"),resultset.getObject("number"),resultset.getObject("state"),resultset.getObject("station"),resultset.getObject("create_time"),resultset.getObject("update_time")));
+                //System.out.println(String.format("id = %s, customer = %s, coffee = %s, number = %s, state = %s, station = %s,create time = %s, update time = %s", resultset.getObject("id"),resultset.getObject("customer"),resultset.getObject("coffee"),resultset.getObject("number"),resultset.getObject("state"),resultset.getObject("station"),resultset.getObject("create_time"),resultset.getObject("update_time")));
             }
 
             //防止sql注入
             sql = "select * from orders where id=?";
             PreparedStatement preparedStatement  = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, 1);
+            preparedStatement.setInt(1, 4);
             resultset = preparedStatement.executeQuery();
+            System.out.println(resultset.next());
             while(resultset.next()){
                 System.out.println(String.format("id = %s, customer = %s, coffee = %s, number = %s, state = %s, station = %s,create time = %s, update time = %s", resultset.getObject("id"),resultset.getObject("customer"),resultset.getObject("coffee"),resultset.getObject("number"),resultset.getObject("state"),resultset.getObject("station"),resultset.getObject("create_time"),resultset.getObject("update_time")));
             }
